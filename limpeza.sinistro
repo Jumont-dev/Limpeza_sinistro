@@ -4,8 +4,7 @@
   "metadata": {
     "colab": {
       "provenance": [],
-      "authorship_tag": "ABX9TyNHyiapAT56ldpgGw/pPpDn",
-      "include_colab_link": true
+      "authorship_tag": "ABX9TyOEhmqoFPIEFYHcSrqySokK"
     },
     "kernelspec": {
       "name": "python3",
@@ -17,23 +16,13 @@
   },
   "cells": [
     {
-      "cell_type": "markdown",
-      "metadata": {
-        "id": "view-in-github",
-        "colab_type": "text"
-      },
-      "source": [
-        "<a href=\"https://colab.research.google.com/github/Jumont-dev/Limpeza_sinistro/blob/main/limpeza.sinistro\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
-      ]
-    },
-    {
       "cell_type": "code",
       "metadata": {
         "colab": {
           "base_uri": "https://localhost:8080/"
         },
         "id": "8a4354c2",
-        "outputId": "86125e49-62f8-423a-e81c-7afeaf24bc5c"
+        "outputId": "2ce1bb47-1603-4bfc-e985-8c442d612848"
       },
       "source": [
         "import pandas as pd\n",
@@ -41,8 +30,8 @@
         "import datetime\n",
         "\n",
         "# Recarregar o DataFrame original\n",
-        "df = pd.read_excel(\"SINISTROS.xlsx\")\n",
-        "print(\"DataFrame recarregado do arquivo SINISTRO.xlsx.\")\n",
+        "df = pd.read_excel(\"SINISTRO 2026.xlsx\")\n",
+        "print(\"DataFrame recarregado do arquivo SINISTRO 2026.xlsx.\")\n",
         "\n",
         "# 2. Redefinir e aplicar a função remover_colunas\n",
         "def remover_colunas(df):\n",
@@ -83,43 +72,19 @@
         "\n",
         "print(\"Valores numéricos implausíveis tratados (negativos e 0.0).\")\n"
       ],
-      "execution_count": 3,
+      "execution_count": null,
       "outputs": [
         {
           "output_type": "stream",
           "name": "stdout",
           "text": [
-            "DataFrame recarregado do arquivo SINISTRO.xlsx.\n",
+            "DataFrame recarregado do arquivo SINISTRO 2026.xlsx.\n",
             "Colunas removidas com sucesso.\n",
             "Colunas 'qtd_veic_outros' e 'qtd_veic_nao_disponivel' somadas em 'qtd_veic_outros_não_dispo' e removidas.\n",
-            "Convertidos 1 valores negativos em 'numero_logradouro' para NaN.\n",
-            "Convertidos 79626 valores 0.0 em 'latitude' para NaN.\n",
-            "Convertidos 79626 valores 0.0 em 'longitude' para NaN.\n",
+            "Convertidos 2 valores negativos em 'numero_logradouro' para NaN.\n",
+            "Convertidos 6627 valores 0.0 em 'latitude' para NaN.\n",
+            "Convertidos 6627 valores 0.0 em 'longitude' para NaN.\n",
             "Valores numéricos implausíveis tratados (negativos e 0.0).\n"
-          ]
-        }
-      ]
-    },
-    {
-      "cell_type": "code",
-      "source": [
-        "from google.colab import drive\n",
-        "drive.mount('/content/drive')"
-      ],
-      "metadata": {
-        "colab": {
-          "base_uri": "https://localhost:8080/"
-        },
-        "id": "YH_tZ5qW6M0v",
-        "outputId": "ca33921b-dcaf-4aed-cbf1-0ef4fa415c14"
-      },
-      "execution_count": 5,
-      "outputs": [
-        {
-          "output_type": "stream",
-          "name": "stdout",
-          "text": [
-            "Mounted at /content/drive\n"
           ]
         }
       ]
@@ -132,7 +97,7 @@
           "height": 479
         },
         "id": "b56e44b6",
-        "outputId": "3559a971-7da7-4066-d0c7-33c7a3fd6cad"
+        "outputId": "c5b5d64c-d9dc-4f0b-94c6-8666e5b3c10e"
       },
       "source": [
         "if 'hora_sinistro' in df.columns:\n",
@@ -158,13 +123,13 @@
         "else:\n",
         "    print(\"Coluna 'hora_sinistro' não encontrada para conversão.\")"
       ],
-      "execution_count": 6,
+      "execution_count": null,
       "outputs": [
         {
           "output_type": "stream",
           "name": "stdout",
           "text": [
-            "Coluna 'hora_sinistro' convertida para o tipo de tempo. NaNs originais: 157, NaNs após conversão: 157.\n"
+            "Coluna 'hora_sinistro' convertida para o tipo de tempo. NaNs originais: 40, NaNs após conversão: 40.\n"
           ]
         },
         {
@@ -172,15 +137,15 @@
           "data": {
             "text/plain": [
               "  hora_sinistro\n",
-              "0      22:45:00\n",
-              "1      04:33:00\n",
-              "2      04:39:00\n",
-              "3      18:15:00\n",
-              "4      04:56:00"
+              "0      04:55:00\n",
+              "1      05:43:00\n",
+              "2      06:27:00\n",
+              "3      06:51:00\n",
+              "4      07:51:00"
             ],
             "text/html": [
               "\n",
-              "  <div id=\"df-796903a5-be6f-48d3-911a-a807669fc018\" class=\"colab-df-container\">\n",
+              "  <div id=\"df-92e8116e-0452-4fef-a5af-3722ae1f8465\" class=\"colab-df-container\">\n",
               "    <div>\n",
               "<style scoped>\n",
               "    .dataframe tbody tr th:only-of-type {\n",
@@ -205,23 +170,23 @@
               "  <tbody>\n",
               "    <tr>\n",
               "      <th>0</th>\n",
-              "      <td>22:45:00</td>\n",
+              "      <td>04:55:00</td>\n",
               "    </tr>\n",
               "    <tr>\n",
               "      <th>1</th>\n",
-              "      <td>04:33:00</td>\n",
+              "      <td>05:43:00</td>\n",
               "    </tr>\n",
               "    <tr>\n",
               "      <th>2</th>\n",
-              "      <td>04:39:00</td>\n",
+              "      <td>06:27:00</td>\n",
               "    </tr>\n",
               "    <tr>\n",
               "      <th>3</th>\n",
-              "      <td>18:15:00</td>\n",
+              "      <td>06:51:00</td>\n",
               "    </tr>\n",
               "    <tr>\n",
               "      <th>4</th>\n",
-              "      <td>04:56:00</td>\n",
+              "      <td>07:51:00</td>\n",
               "    </tr>\n",
               "  </tbody>\n",
               "</table>\n",
@@ -229,7 +194,7 @@
               "    <div class=\"colab-df-buttons\">\n",
               "\n",
               "  <div class=\"colab-df-container\">\n",
-              "    <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-796903a5-be6f-48d3-911a-a807669fc018')\"\n",
+              "    <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-92e8116e-0452-4fef-a5af-3722ae1f8465')\"\n",
               "            title=\"Convert this dataframe to an interactive table.\"\n",
               "            style=\"display:none;\">\n",
               "\n",
@@ -281,12 +246,12 @@
               "\n",
               "    <script>\n",
               "      const buttonEl =\n",
-              "        document.querySelector('#df-796903a5-be6f-48d3-911a-a807669fc018 button.colab-df-convert');\n",
+              "        document.querySelector('#df-92e8116e-0452-4fef-a5af-3722ae1f8465 button.colab-df-convert');\n",
               "      buttonEl.style.display =\n",
               "        google.colab.kernel.accessAllowed ? 'block' : 'none';\n",
               "\n",
               "      async function convertToInteractive(key) {\n",
-              "        const element = document.querySelector('#df-796903a5-be6f-48d3-911a-a807669fc018');\n",
+              "        const element = document.querySelector('#df-92e8116e-0452-4fef-a5af-3722ae1f8465');\n",
               "        const dataTable =\n",
               "          await google.colab.kernel.invokeFunction('convertToInteractive',\n",
               "                                                    [key], {});\n",
@@ -311,7 +276,7 @@
             ],
             "application/vnd.google.colaboratory.intrinsic+json": {
               "type": "dataframe",
-              "summary": "{\n  \"name\": \"    print(\\\"Coluna 'hora_sinistro' n\\u00e3o encontrada para convers\\u00e3o\",\n  \"rows\": 5,\n  \"fields\": [\n    {\n      \"column\": \"hora_sinistro\",\n      \"properties\": {\n        \"dtype\": \"string\",\n        \"num_unique_values\": 5,\n        \"samples\": [\n          \"04:33:00\",\n          \"04:56:00\",\n          \"04:39:00\"\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    }\n  ]\n}"
+              "summary": "{\n  \"name\": \"    print(\\\"Coluna 'hora_sinistro' n\\u00e3o encontrada para convers\\u00e3o\",\n  \"rows\": 5,\n  \"fields\": [\n    {\n      \"column\": \"hora_sinistro\",\n      \"properties\": {\n        \"dtype\": \"string\",\n        \"num_unique_values\": 5,\n        \"samples\": [\n          \"05:43:00\",\n          \"07:51:00\",\n          \"06:27:00\"\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    }\n  ]\n}"
             }
           },
           "metadata": {}
@@ -321,11 +286,11 @@
           "data": {
             "text/plain": [
               "hora_sinistro\n",
-              "18:30:00    478\n",
-              "08:00:00    470\n",
-              "19:00:00    470\n",
-              "18:00:00    445\n",
-              "17:30:00    441\n",
+              "18:00:00    99\n",
+              "17:30:00    98\n",
+              "17:40:00    90\n",
+              "14:30:00    89\n",
+              "08:00:00    88\n",
               "Name: count, dtype: int64"
             ],
             "text/html": [
@@ -356,24 +321,24 @@
               "  </thead>\n",
               "  <tbody>\n",
               "    <tr>\n",
-              "      <th>18:30:00</th>\n",
-              "      <td>478</td>\n",
-              "    </tr>\n",
-              "    <tr>\n",
-              "      <th>08:00:00</th>\n",
-              "      <td>470</td>\n",
-              "    </tr>\n",
-              "    <tr>\n",
-              "      <th>19:00:00</th>\n",
-              "      <td>470</td>\n",
-              "    </tr>\n",
-              "    <tr>\n",
               "      <th>18:00:00</th>\n",
-              "      <td>445</td>\n",
+              "      <td>99</td>\n",
               "    </tr>\n",
               "    <tr>\n",
               "      <th>17:30:00</th>\n",
-              "      <td>441</td>\n",
+              "      <td>98</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>17:40:00</th>\n",
+              "      <td>90</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>14:30:00</th>\n",
+              "      <td>89</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>08:00:00</th>\n",
+              "      <td>88</td>\n",
               "    </tr>\n",
               "  </tbody>\n",
               "</table>\n",
@@ -391,7 +356,7 @@
           "base_uri": "https://localhost:8080/"
         },
         "id": "8df71148",
-        "outputId": "3d7c9aa1-c7a7-481f-a613-474c56f27f17"
+        "outputId": "e138e6e5-5c57-41d3-d243-160a654ad60b"
       },
       "source": [
         "qtd_cols = [col for col in df.columns if col.startswith('qtd_')]\n",
@@ -409,24 +374,24 @@
         "else:\n",
         "    print(f\"Total de {filled_count} valores NaN preenchidos com 0 nas colunas 'qtd_'.\")\n"
       ],
-      "execution_count": 7,
+      "execution_count": null,
       "outputs": [
         {
           "output_type": "stream",
           "name": "stdout",
           "text": [
-            "Preenchidos 181413 valores NaN na coluna 'qtd_pedestre' com 0.\n",
-            "Preenchidos 186557 valores NaN na coluna 'qtd_bicicleta' com 0.\n",
-            "Preenchidos 121508 valores NaN na coluna 'qtd_motocicleta' com 0.\n",
-            "Preenchidos 122013 valores NaN na coluna 'qtd_automovel' com 0.\n",
-            "Preenchidos 185908 valores NaN na coluna 'qtd_onibus' com 0.\n",
-            "Preenchidos 183764 valores NaN na coluna 'qtd_caminhao' com 0.\n",
-            "Preenchidos 184463 valores NaN na coluna 'qtd_gravidade_fatal' com 0.\n",
-            "Preenchidos 179576 valores NaN na coluna 'qtd_gravidade_grave' com 0.\n",
-            "Preenchidos 106226 valores NaN na coluna 'qtd_gravidade_leve' com 0.\n",
-            "Preenchidos 186529 valores NaN na coluna 'qtd_gravidade_nao_disponivel' com 0.\n",
-            "Preenchidos 190115 valores NaN na coluna 'qtd_veic_outros_não_dispo' com 0.\n",
-            "Total de 1828072 valores NaN preenchidos com 0 nas colunas 'qtd_'.\n"
+            "Preenchidos 37667 valores NaN na coluna 'qtd_pedestre' com 0.\n",
+            "Preenchidos 39148 valores NaN na coluna 'qtd_bicicleta' com 0.\n",
+            "Preenchidos 24439 valores NaN na coluna 'qtd_motocicleta' com 0.\n",
+            "Preenchidos 24596 valores NaN na coluna 'qtd_automovel' com 0.\n",
+            "Preenchidos 38541 valores NaN na coluna 'qtd_onibus' com 0.\n",
+            "Preenchidos 38209 valores NaN na coluna 'qtd_caminhao' com 0.\n",
+            "Preenchidos 38242 valores NaN na coluna 'qtd_gravidade_fatal' com 0.\n",
+            "Preenchidos 37025 valores NaN na coluna 'qtd_gravidade_grave' com 0.\n",
+            "Preenchidos 20782 valores NaN na coluna 'qtd_gravidade_leve' com 0.\n",
+            "Preenchidos 38783 valores NaN na coluna 'qtd_gravidade_nao_disponivel' com 0.\n",
+            "Preenchidos 39461 valores NaN na coluna 'qtd_veic_outros_não_dispo' com 0.\n",
+            "Total de 376893 valores NaN preenchidos com 0 nas colunas 'qtd_'.\n"
           ]
         }
       ]
@@ -439,7 +404,7 @@
           "height": 224
         },
         "id": "5e009bcc",
-        "outputId": "bdba78bc-a185-4602-e5b4-07e7144a6cea"
+        "outputId": "1b9901e7-1816-4024-9590-56b4633f1403"
       },
       "source": [
         "missing_values_reloaded = df.isnull().sum()\n",
@@ -458,7 +423,7 @@
         "else:\n",
         "    print(\"Não há valores ausentes restantes no DataFrame.\")"
       ],
-      "execution_count": 8,
+      "execution_count": null,
       "outputs": [
         {
           "output_type": "stream",
@@ -472,15 +437,15 @@
           "data": {
             "text/plain": [
               "                   Missing Values  Percentage\n",
-              "longitude                   85889   45.151743\n",
-              "latitude                    85889   45.151743\n",
-              "numero_logradouro             773    0.406365\n",
-              "logradouro                    418    0.219742\n",
-              "hora_sinistro                 157    0.082535"
+              "longitude                    9209   23.326916\n",
+              "latitude                     9209   23.326916\n",
+              "numero_logradouro             157    0.397690\n",
+              "logradouro                     97    0.245706\n",
+              "hora_sinistro                  40    0.101322"
             ],
             "text/html": [
               "\n",
-              "  <div id=\"df-f1c3ebde-2004-4fd0-9ab4-db4b30436187\" class=\"colab-df-container\">\n",
+              "  <div id=\"df-d9a9fb2a-0ac2-458e-9f40-b5432f38bfa4\" class=\"colab-df-container\">\n",
               "    <div>\n",
               "<style scoped>\n",
               "    .dataframe tbody tr th:only-of-type {\n",
@@ -506,28 +471,28 @@
               "  <tbody>\n",
               "    <tr>\n",
               "      <th>longitude</th>\n",
-              "      <td>85889</td>\n",
-              "      <td>45.151743</td>\n",
+              "      <td>9209</td>\n",
+              "      <td>23.326916</td>\n",
               "    </tr>\n",
               "    <tr>\n",
               "      <th>latitude</th>\n",
-              "      <td>85889</td>\n",
-              "      <td>45.151743</td>\n",
+              "      <td>9209</td>\n",
+              "      <td>23.326916</td>\n",
               "    </tr>\n",
               "    <tr>\n",
               "      <th>numero_logradouro</th>\n",
-              "      <td>773</td>\n",
-              "      <td>0.406365</td>\n",
+              "      <td>157</td>\n",
+              "      <td>0.397690</td>\n",
               "    </tr>\n",
               "    <tr>\n",
               "      <th>logradouro</th>\n",
-              "      <td>418</td>\n",
-              "      <td>0.219742</td>\n",
+              "      <td>97</td>\n",
+              "      <td>0.245706</td>\n",
               "    </tr>\n",
               "    <tr>\n",
               "      <th>hora_sinistro</th>\n",
-              "      <td>157</td>\n",
-              "      <td>0.082535</td>\n",
+              "      <td>40</td>\n",
+              "      <td>0.101322</td>\n",
               "    </tr>\n",
               "  </tbody>\n",
               "</table>\n",
@@ -535,7 +500,7 @@
               "    <div class=\"colab-df-buttons\">\n",
               "\n",
               "  <div class=\"colab-df-container\">\n",
-              "    <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-f1c3ebde-2004-4fd0-9ab4-db4b30436187')\"\n",
+              "    <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-d9a9fb2a-0ac2-458e-9f40-b5432f38bfa4')\"\n",
               "            title=\"Convert this dataframe to an interactive table.\"\n",
               "            style=\"display:none;\">\n",
               "\n",
@@ -587,12 +552,12 @@
               "\n",
               "    <script>\n",
               "      const buttonEl =\n",
-              "        document.querySelector('#df-f1c3ebde-2004-4fd0-9ab4-db4b30436187 button.colab-df-convert');\n",
+              "        document.querySelector('#df-d9a9fb2a-0ac2-458e-9f40-b5432f38bfa4 button.colab-df-convert');\n",
               "      buttonEl.style.display =\n",
               "        google.colab.kernel.accessAllowed ? 'block' : 'none';\n",
               "\n",
               "      async function convertToInteractive(key) {\n",
-              "        const element = document.querySelector('#df-f1c3ebde-2004-4fd0-9ab4-db4b30436187');\n",
+              "        const element = document.querySelector('#df-d9a9fb2a-0ac2-458e-9f40-b5432f38bfa4');\n",
               "        const dataTable =\n",
               "          await google.colab.kernel.invokeFunction('convertToInteractive',\n",
               "                                                    [key], {});\n",
@@ -612,7 +577,7 @@
               "  </div>\n",
               "\n",
               "\n",
-              "  <div id=\"id_3f000949-1230-4011-8966-abadf54a0b59\">\n",
+              "  <div id=\"id_30995073-40e2-449f-85d8-ab46fae614e1\">\n",
               "    <style>\n",
               "      .colab-df-generate {\n",
               "        background-color: #E8F0FE;\n",
@@ -656,7 +621,7 @@
               "    <script>\n",
               "      (() => {\n",
               "      const buttonEl =\n",
-              "        document.querySelector('#id_3f000949-1230-4011-8966-abadf54a0b59 button.colab-df-generate');\n",
+              "        document.querySelector('#id_30995073-40e2-449f-85d8-ab46fae614e1 button.colab-df-generate');\n",
               "      buttonEl.style.display =\n",
               "        google.colab.kernel.accessAllowed ? 'block' : 'none';\n",
               "\n",
@@ -673,7 +638,7 @@
             "application/vnd.google.colaboratory.intrinsic+json": {
               "type": "dataframe",
               "variable_name": "missing_info_reloaded",
-              "summary": "{\n  \"name\": \"missing_info_reloaded\",\n  \"rows\": 5,\n  \"fields\": [\n    {\n      \"column\": \"Missing Values\",\n      \"properties\": {\n        \"dtype\": \"number\",\n        \"std\": 46797,\n        \"min\": 157,\n        \"max\": 85889,\n        \"num_unique_values\": 4,\n        \"samples\": [\n          773,\n          157,\n          85889\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    },\n    {\n      \"column\": \"Percentage\",\n      \"properties\": {\n        \"dtype\": \"number\",\n        \"std\": 24.601516878615335,\n        \"min\": 0.0825347092622869,\n        \"max\": 45.15174295432203,\n        \"num_unique_values\": 4,\n        \"samples\": [\n          0.40636516089011315,\n          0.0825347092622869,\n          45.15174295432203\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    }\n  ]\n}"
+              "summary": "{\n  \"name\": \"missing_info_reloaded\",\n  \"rows\": 5,\n  \"fields\": [\n    {\n      \"column\": \"Missing Values\",\n      \"properties\": {\n        \"dtype\": \"number\",\n        \"std\": 4990,\n        \"min\": 40,\n        \"max\": 9209,\n        \"num_unique_values\": 4,\n        \"samples\": [\n          157,\n          40,\n          9209\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    },\n    {\n      \"column\": \"Percentage\",\n      \"properties\": {\n        \"dtype\": \"number\",\n        \"std\": 12.64114621093294,\n        \"min\": 0.10132225543340594,\n        \"max\": 23.326916257155883,\n        \"num_unique_values\": 4,\n        \"samples\": [\n          0.39768985257611833,\n          0.10132225543340594,\n          23.326916257155883\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    }\n  ]\n}"
             }
           },
           "metadata": {}
@@ -687,14 +652,14 @@
           "base_uri": "https://localhost:8080/"
         },
         "id": "f62cdf9f",
-        "outputId": "c3f03bba-9937-4582-f1df-4252b8266cbc"
+        "outputId": "e77e8873-5bce-4bb2-a198-3017b617f574"
       },
       "source": [
         "# Salvar o DataFrame em um arquivo CSV\n",
         "df.to_csv('SINISTRO_limpo.csv', index=False)\n",
         "print(\"DataFrame salvo como 'SINISTRO_limpo.csv' com sucesso!\")"
       ],
-      "execution_count": 9,
+      "execution_count": null,
       "outputs": [
         {
           "output_type": "stream",
@@ -713,14 +678,14 @@
           "height": 17
         },
         "id": "62eac10c",
-        "outputId": "7f58fd1e-808f-4781-9402-f1eaf7520748"
+        "outputId": "4efd8756-ada3-43b2-a01a-49264539f194"
       },
       "source": [
         "from google.colab import files\n",
         "\n",
         "files.download('SINISTRO_limpo.csv')"
       ],
-      "execution_count": 16,
+      "execution_count": null,
       "outputs": [
         {
           "output_type": "display_data",
@@ -781,7 +746,7 @@
               "<IPython.core.display.Javascript object>"
             ],
             "application/javascript": [
-              "download(\"download_b39109bd-ced6-4bf6-80f6-20dbf58ed3e3\", \"SINISTRO_limpo.csv\", 31001726)"
+              "download(\"download_16b94390-b74e-467e-9664-02a8e828393c\", \"SINISTRO_limpo.csv\", 6658658)"
             ]
           },
           "metadata": {}
@@ -796,7 +761,7 @@
           "height": 34
         },
         "id": "f3d070c1",
-        "outputId": "e8485dd5-3484-4d89-c5e4-f3fe0a071f5d"
+        "outputId": "2f26e81e-adeb-487f-83a0-9205e908ceee"
       },
       "source": [
         "import pandas as pd\n",
@@ -812,7 +777,7 @@
         "# Baixar o arquivo Excel\n",
         "files.download('SINISTRO_limpo.xlsx')"
       ],
-      "execution_count": 17,
+      "execution_count": null,
       "outputs": [
         {
           "output_type": "stream",
@@ -880,7 +845,7 @@
               "<IPython.core.display.Javascript object>"
             ],
             "application/javascript": [
-              "download(\"download_e6bac57b-a202-4f39-af17-4159cebba4b9\", \"SINISTRO_limpo.xlsx\", 16630076)"
+              "download(\"download_c579ed8c-5a3c-43e8-a1c2-9502b6dd5332\", \"SINISTRO_limpo.xlsx\", 4304412)"
             ]
           },
           "metadata": {}
